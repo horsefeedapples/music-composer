@@ -98,7 +98,7 @@ def create_network(network_input, n_vocab):
     model.add(LSTM(128))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
-    model.add(Dense(128))
+    model.add(Dense(64))
     model.add(Activation('relu'))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
@@ -120,7 +120,7 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=100, batch_size=128, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=250, batch_size=128, callbacks=callbacks_list)
 
 if __name__ == '__main__':
     train_network()

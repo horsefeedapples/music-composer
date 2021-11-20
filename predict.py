@@ -62,7 +62,7 @@ def create_network(network_input, n_vocab):
     model.add(LSTM(128))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
-    model.add(Dense(128))
+    model.add(Dense(64))
     model.add(Activation('relu'))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
